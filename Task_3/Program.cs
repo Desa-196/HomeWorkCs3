@@ -23,3 +23,19 @@ while(true)
     }
 }
 
+Console.Write($"Кубы чисел от 1 до {N}: |");
+
+if(N > 0)
+{
+    for(int i=1; i <= N; i++)
+    {
+        Console.Write($" {Math.Pow(i, 3)} |");
+    }
+}
+else
+{
+   for(int i=1; i >= N; i--)
+    {
+        Console.Write($" {Math.Pow(i, 3)} |");
+    } 
+}
