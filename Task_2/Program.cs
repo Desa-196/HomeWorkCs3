@@ -7,3 +7,24 @@
 A (3,6,8); B (2,1,-7), -> 15.84
 A (7,-5, 0); B (1,-1,9) -> 11.53
 */
+
+//Функция принимает отображаемый перед вводом текст, проверяет правильность ввода и возвращает тип double с введенным числом.
+double console_read_double(string text)
+{
+    Console.Write($"{text}: ");
+
+    while(true)
+    {
+        double read_double;
+
+        if( double.TryParse(Console.ReadLine(), out read_double ) )
+        {
+            return read_double;
+        }
+        else
+        {
+            Console.Write("Введено некорректное число, повторите попытку ввода:");
+        }
+        
+    }
+}
