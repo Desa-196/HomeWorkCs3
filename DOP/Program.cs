@@ -17,4 +17,37 @@
 Выходные данные
 В выходной файл OUTPUT.TXT выведите ответ на задачу.
 */
+int N;
 
+int console_read_int(string text, int min, int max)
+{
+    int N;
+
+    Console.Write($"{text}: ");
+
+    while(true)
+    {	
+        //Проверяем число ли ввели
+        if( int.TryParse(Console.ReadLine(), out N ) )
+        {
+            //Если число пятизначное, выходим из цикла while
+            if(N >= min && N <= max)
+            {
+                break;
+            }
+            else
+            {
+                Console.Write($"Число должно быть от {min} до {max} включительно, повторите ввод:");
+            }
+        }
+        else
+        {
+            Console.Write("Введено некорректное число, повторите попытку ввода числа:");
+        }
+    }
+    return N;
+    
+}
+
+N = console_read_int("Введите количество кустов черники от 3 до 1000 включительно", 3, 1000);
+Console.WriteLine(N);
