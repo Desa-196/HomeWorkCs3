@@ -9,3 +9,33 @@
 23432 -> да
 
 */
+
+string read_int = "";
+bool result = true;
+
+Console.Write("Введите пятизначное число: ");
+
+while(true)
+{	
+	//Ждем ввода числа
+    read_int = Console.ReadLine()!;
+	
+	//Проверяем число ли ввели
+    if( int.TryParse(read_int, out _ ) )
+    {
+        //Если число пятизначное, выходим из цикла while
+        if(read_int.Length == 5 )
+        {
+            break;
+        }
+        else
+        {
+            Console.Write("Число должно быть пятизначным:");
+        }
+    }
+    else
+    {
+        Console.Write("Введено некорректное число, повторите попытку ввода пятизначного числа:");
+    }
+    
+}
