@@ -18,6 +18,7 @@
 В выходной файл OUTPUT.TXT выведите ответ на задачу.
 */
 int N;
+int max = 0;
 
 int console_read_int(string text, int min, int max)
 {
@@ -73,4 +74,13 @@ for(int i=0; i < N; i++)
     array_count_berries[i] = console_read_int($"Введите кол-во ягод на {i+1} кусте", 0, 1000);
 }
 
+for(int i=0; i < N; i++)
+{
+    /*Ссумируем кол-во ягод на трёх кустах, если кусты оказываются за пределами индекса, функция get_index вернёт на сколько мы проли за конец массива
+    что позволит нам двигаться как бы по кругу, после конца массива опять в начало*/
+    int sum = array_count_berries[i] + array_count_berries[ get_index(i+1, N) ] + array_count_berries[get_index(i+2, N)];
+    //Если получили значение больше чем в максимуме, перезаписываем его.
+    if(max < sum) max = sum;
+}
 
+Console.WriteLine($"Максимальное число ягод, которое может собрать за один заход собирающий модуль = {max}");
