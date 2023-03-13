@@ -28,3 +28,15 @@ double console_read_double(string text)
         
     }
 }
+
+double X1 = console_read_double("Введите координату X первой точки");
+double Y1 = console_read_double("Введите координату Y первой точки");
+double Z1 = console_read_double("Введите координату Z первой точки");
+
+double X2 = console_read_double("Введите координату X второй точки");
+double Y2 = console_read_double("Введите координату Y второй точки");
+double Z2 = console_read_double("Введите координату Z второй точки");
+
+double s = Math.Sqrt(Math.Pow(X1-X2, 2) + Math.Pow(Y1-Y2, 2) + Math.Pow(Z1-Z2, 2));
+
+Console.WriteLine($"Расстояние между точками = {Math.Round(s, 2)}");
