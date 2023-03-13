@@ -49,6 +49,7 @@ int console_read_int(string text, int min, int max)
     
 }
 
+//Ввод кол-ва кустов
 N = console_read_int("Введите количество кустов черники от 3 до 1000 включительно", 3, 1000);
 
 //Создаем массив размером равным кол-ву кустов
@@ -58,3 +59,5 @@ for(int i=0; i < N; i++)
 {
     array_count_berries[i] = console_read_int($"Введите кол-во ягод на {i+1} кусте", 0, 1000);
 }
+
+
