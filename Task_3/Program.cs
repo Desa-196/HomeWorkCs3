@@ -6,3 +6,20 @@
 3 -> 1, 8, 27
 5 -> 1, 8, 27, 64, 125
 */
+
+int N;
+
+Console.Write("Введите число: ");
+
+while(true)
+{
+    if( int.TryParse(Console.ReadLine(), out N ) )
+    {
+        break;
+    }
+    else
+    {
+        Console.Write("Введено некорректное число, повторите попытку ввода:");
+    }
+}
+
