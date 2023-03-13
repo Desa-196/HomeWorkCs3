@@ -50,4 +50,11 @@ int console_read_int(string text, int min, int max)
 }
 
 N = console_read_int("Введите количество кустов черники от 3 до 1000 включительно", 3, 1000);
-Console.WriteLine(N);
+
+//Создаем массив размером равным кол-ву кустов
+int[] array_count_berries = new int[N];
+//В цикле заполняем его из консоли
+for(int i=0; i < N; i++)
+{
+    array_count_berries[i] = console_read_int($"Введите кол-во ягод на {i+1} кусте", 0, 1000);
+}
