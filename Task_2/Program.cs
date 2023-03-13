@@ -12,10 +12,12 @@ A (7,-5, 0); B (1,-1,9) -> 11.53
 double console_read_double(string text)
 {
     Console.Write($"{text}: ");
+    
+    double read_double;
 
     while(true)
     {
-        double read_double;
+        
 
         if( double.TryParse(Console.ReadLine(), out read_double ) )
         {
